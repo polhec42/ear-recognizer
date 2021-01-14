@@ -132,3 +132,6 @@ dmypy.json
 *.png
 *.jpg
 *.json
+
+#models
+models
