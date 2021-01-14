@@ -1,0 +1,27 @@
+batch_size=64
+
+input_size = 80*40
+hidden_sizes = [3000, 2000, 1000, 500, 250]
+output_size = 100
+model = nn.Sequential(
+    nn.Conv2d(in_channels=1, out_channels=2, kernel_size=5),
+    nn.MaxPool2d(kernel_size=2, stride=2), 
+    nn.Conv2d(in_channels=2, out_channels=4, kernel_size=5), 
+    nn.Flatten(),
+    nn.Linear(476*4, hidden_sizes[0]),
+    nn.ReLU(),
+    nn.Linear(hidden_sizes[0], hidden_sizes[1]),
+    nn.ReLU(),
+    nn.Linear(hidden_sizes[1], hidden_sizes[2]),
+    nn.ReLU(),
+    nn.Linear(hidden_sizes[2], hidden_sizes[3]),
+    nn.ReLU(),
+    nn.Linear(hidden_sizes[3], hidden_sizes[4]),
+    nn.ReLU(),
+    nn.Linear(hidden_sizes[4], output_size),
+    nn.Tanh(),
+    nn.LogSoftmax(dim=1))
+
+optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.5)
+
+n = 5
