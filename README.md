@@ -1,6 +1,6 @@
 # ear-recognizer
 
-This repository contains all code that was written for an ear recognizer. Datasets are not included.
+This repository contains all code that was written for an ear recognizer. Datasets are not included. Models are available at `https://drive.google.com/drive/folders/18tWs0tgIrBhwk6fgLN9-_mgu4WE9GE4e?usp=sharing` and are available to the people with access to the Univerza v Ljubljani. If there are any problems, feel free to contact me: `zm0971@student.uni-lj.si`.
 
 In order to re-run the evaluation stage, run the `python evaluation.py`. This script will calculate the results for Rank-5 metric. 
 
